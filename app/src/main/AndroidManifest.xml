@@ -32,7 +32,7 @@
         <activity android:name=".PhrasesActivity" />
         <activity android:name=".NumbersActivity" />
         <activity android:name=".FamilyActivity" />
-        <activity android:name=".ColorsActivity"></activity>
+        <activity android:name=".ColorsActivity" />
     </application>
 
 </manifest>
