@@ -32,7 +32,19 @@ public class NumbersActivity extends AppCompatActivity {
 */
 
         ArrayList<String> numbersList = new ArrayList<>();
-        numbersList.add(getResources().getString(R.string.numbers_1) + getResources().getString(R.string.numbers_2) + getResources().getString(R.string.numbers_3) + getResources().getString(R.string.numbers_4) + getResources().getString(R.string.numbers_5) + getResources().getString(R.string.numbers_6) + getResources().getString(R.string.numbers_7) + getResources().getString(R.string.numbers_8) + getResources().getString(R.string.numbers_9) + getResources().getString(R.string.numbers_10));
+        numbersList.add(getResources().getString(R.string.numbers_1));
+        numbersList.add(getResources().getString(R.string.numbers_2));
+        numbersList.add(getResources().getString(R.string.numbers_3));
+        numbersList.add(getResources().getString(R.string.numbers_4));
+        numbersList.add(getResources().getString(R.string.numbers_5));
+        numbersList.add(getResources().getString(R.string.numbers_6));
+        numbersList.add(getResources().getString(R.string.numbers_7));
+        numbersList.add(getResources().getString(R.string.numbers_8));
+        numbersList.add(getResources().getString(R.string.numbers_9));
+        numbersList.add(getResources().getString(R.string.numbers_10));
+
+        Log.w("Numbers Activity", "Word at first index: " + numbersList.get(0));
+        Log.w("Numbers Activity", "Word at last index: " + numbersList.get(numbersList.size() - 1));
 
     }
 }
