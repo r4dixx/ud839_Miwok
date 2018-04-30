@@ -29,14 +29,16 @@
     <string name="category_family">Family Members</string>
 
     <!-- Vocabulary list for numbers [CHAR LIMIT=20] -->
-    <string name="numbers_1">one</string>
-    <string name="numbers_2">two</string>
-    <string name="numbers_3">three</string>
-    <string name="numbers_4">four</string>
-    <string name="numbers_5">five</string>
-    <string name="numbers_6">six</string>
-    <string name="numbers_7">seven</string>
-    <string name="numbers_8">eight</string>
-    <string name="numbers_9">nine</string>
-    <string name="numbers_10">ten</string>
+    <string-array name="numbers">
+        <item name="numbers_1">one</item>
+        <item name="numbers_2">two</item>
+        <item name="numbers_3">three</item>
+        <item name="numbers_4">four</item>
+        <item name="numbers_5">five</item>
+        <item name="numbers_6">six</item>
+        <item name="numbers_7">seven</item>
+        <item name="numbers_8">eight</item>
+        <item name="numbers_9">nine</item>
+        <item name="numbers_10">ten</item>
+    </string-array>
 </resources>
