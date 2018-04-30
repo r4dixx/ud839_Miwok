@@ -30,12 +30,12 @@
 
     <!-- Vocabulary list for numbers [CHAR LIMIT=20] -->
     <string name="numbers_1">one</string>
-    <string name="numbers_2">one</string>
-    <string name="numbers_3">one</string>
-    <string name="numbers_4">one</string>
-    <string name="numbers_5">one</string>
-    <string name="numbers_6">one</string>
-    <string name="numbers_7">one</string>
+    <string name="numbers_2">two</string>
+    <string name="numbers_3">three</string>
+    <string name="numbers_4">four</string>
+    <string name="numbers_5">five</string>
+    <string name="numbers_6">six</string>
+    <string name="numbers_7">seven</string>
     <string name="numbers_8">eight</string>
     <string name="numbers_9">nine</string>
     <string name="numbers_10">ten</string>
