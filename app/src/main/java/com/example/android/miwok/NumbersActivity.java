@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class NumbersActivity extends AppCompatActivity {
 
     @Override
@@ -14,25 +12,13 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        ArrayList<String> words = new ArrayList<>();
-
-        words.add(getResources().getString(R.string.numbers_1));
-        words.add(getResources().getString(R.string.numbers_2));
-        words.add(getResources().getString(R.string.numbers_3));
-        words.add(getResources().getString(R.string.numbers_4));
-        words.add(getResources().getString(R.string.numbers_5));
-        words.add(getResources().getString(R.string.numbers_6));
-        words.add(getResources().getString(R.string.numbers_7));
-        words.add(getResources().getString(R.string.numbers_8));
-        words.add(getResources().getString(R.string.numbers_9));
-        words.add(getResources().getString(R.string.numbers_10));
-
         LinearLayout rootView = findViewById(R.id.rootView);
 
-        for (int index = 0; index < words.size(); index++) {
-            TextView wordView = new TextView(this);
-            wordView.setText(words.get(index));
-            rootView.addView(wordView);
+        String[] numbersList = getResources().getStringArray(R.array.numbers);
+        for (int index = 0; index < numbersList.length; index++) {
+            TextView numbersListView = new TextView(this);
+            numbersListView.setText(String.valueOf(numbersList[index]));
+            rootView.addView(numbersListView);
         }
     }
 }
