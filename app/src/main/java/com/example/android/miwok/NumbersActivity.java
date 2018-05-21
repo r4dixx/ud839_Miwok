@@ -2,8 +2,7 @@ package com.example.android.miwok;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -14,24 +13,21 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        ArrayList<String> words = new ArrayList<>();
-        words.add("one");
-        words.add("two");
-        words.add("three");
-        words.add("four");
-        words.add("five");
-        words.add("six");
-        words.add("seven");
-        words.add("eight");
-        words.add("nine");
-        words.add("ten");
+        ArrayList<Word> numbers = new ArrayList<>();
+        numbers.add(new Word("one", "lutti"));
+        numbers.add(new Word("two", "otiiko"));
+        numbers.add(new Word("three", "tolookosu"));
+        numbers.add(new Word("four", "oyyisa"));
+        numbers.add(new Word("five", "massokka"));
+        numbers.add(new Word("six", "temmokka"));
+        numbers.add(new Word("seven", "kenekaku"));
+        numbers.add(new Word("eight", "kawinta"));
+        numbers.add(new Word("nine", "wo'e"));
+        numbers.add(new Word("ten", "na'aacha"));
 
-        LinearLayout rootView = findViewById(R.id.rootView);
+        WordAdapter numbersAdapter = new WordAdapter(this, numbers);
 
-        for (int index = 0; index < words.size(); index++) {
-            TextView wordView = new TextView(this);
-            wordView.setText(words.get(index));
-            rootView.addView(wordView);
-        }
+        ListView listView = findViewById(R.id.list);
+        listView.setAdapter(numbersAdapter);
     }
 }
