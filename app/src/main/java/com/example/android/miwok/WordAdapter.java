@@ -2,6 +2,7 @@ package com.example.android.miwok;
 
 import android.app.Activity;
 import android.media.Image;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,16 +17,19 @@ import java.util.ArrayList;
  */
 public class WordAdapter extends ArrayAdapter<Word> {
 
+    private int mColorResourceId;
+
     /**
      * Custom constructor
      *
      * @param context to inflate the layout file
      * @param words   is a list of word objects to display in the list
      */
-    public WordAdapter(Activity context, ArrayList<Word> words) {
+    public WordAdapter(Activity context, ArrayList<Word> words, int colorResourceId) {
         // We initialize the ArrayAdapter for the context and the Words list
         // We're using 0 as second type argument because the adapter is not going to use it (it can be of any value)
         super(context, 0, words);
+        mColorResourceId = colorResourceId;
     }
 
     /**
@@ -54,13 +58,20 @@ public class WordAdapter extends ArrayAdapter<Word> {
         defaultTextView.setText(currentWord.getDefaultTranslation());
 
         ImageView imageView = listItemView.findViewById((R.id.image));
-
         if (currentWord.hasImage()) {
             imageView.setImageResource(currentWord.getmImageResourceId());
             imageView.setVisibility(View.VISIBLE);
         } else {
             imageView.setVisibility(View.GONE);
         }
+
+        // Set theme color for the list item
+        View textContainer = listItemView.findViewById(R.id.text_container);
+        // Find the color that the resource ID maps to
+        int color = ContextCompat.getColor(getContext(), mColorResourceId);
+        // Set the background color for the text container View
+        textContainer.setBackgroundColor(color);
+
         // Return the whole list item layout (containing 2 TextViews so it can be show in the ListView
         return listItemView;
     }
