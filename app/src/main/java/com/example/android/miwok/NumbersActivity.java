@@ -13,7 +13,6 @@ public class NumbersActivity extends AppCompatActivity {
 
     // Handles playback of all the sound files
     private MediaPlayer mMediaPlayer;
-
     // Gets triggered when the MediaPlayer has finished playing the audio file
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
@@ -63,6 +62,11 @@ public class NumbersActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
 
     /**
      * Clean up the media player by releasing its resources.
