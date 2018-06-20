@@ -12,7 +12,7 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <!-- Height of each list item -->
-    <dimen name="item_height">88dp</dimen>
+    <dimen name="list_item_height">88dp</dimen>
     <!-- Text size of each list item title -->
     <dimen name="text_size">18sp</dimen>
 </resources>
