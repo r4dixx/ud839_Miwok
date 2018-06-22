@@ -21,25 +21,39 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 /**
- * Provides the appropriate {@link Fragment} for a view pager.
+ * {@link CategoryAdapter} is a {@link FragmentPagerAdapter} that can provide the layout for
+ * each list item based on a data source which is a list of {@link Word} objects.
  */
 public class CategoryAdapter extends FragmentPagerAdapter {
 
-    //We need a Context object to call getResources().getString(int resID).
+    /**
+     * Context of the app
+     */
     Context mContext;
 
-    public CategoryAdapter(FragmentManager fm, Context context) {
+    /**
+     * Create a new {@link CategoryAdapter} object.
+     *
+     * @param context is the context of the app
+     * @param fm      is the fragment manager that will keep each fragment's state in the adapter
+     *                across swipes.
+     */
+    public CategoryAdapter(Context context, FragmentManager fm) {
         super(fm);
         mContext = context;
     }
 
-    // Here we specify how many tabs we want to get
+    /**
+     * Return the total number of pages.
+     */
     @Override
     public int getCount() {
         return 4;
     }
 
-    // Here we grab the appropriate fragments for each tab
+    /**
+     * Return the {@link Fragment} that should be displayed for the given page number.
+     */
     @Override
     public Fragment getItem(int position) {
         switch (position) {
@@ -61,13 +75,13 @@ public class CategoryAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return mContext.getResources().getString(R.string.category_numbers);
+                return mContext.getString(R.string.category_numbers);
             case 1:
-                return mContext.getResources().getString(R.string.category_family);
+                return mContext.getString(R.string.category_family);
             case 2:
-                return mContext.getResources().getString(R.string.category_colors);
+                return mContext.getString(R.string.category_colors);
             case 3:
-                return mContext.getResources().getString(R.string.category_phrases);
+                return mContext.getString(R.string.category_phrases);
             default:
                 return null;
         }
