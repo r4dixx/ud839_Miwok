@@ -18,15 +18,10 @@ import java.util.ArrayList;
  */
 public class FamilyFragment extends Fragment {
 
-    public FamilyFragment() {
-        // Required empty public constructor
-    }
-
     // Handles playback of all the sound files
     private MediaPlayer mMediaPlayer;
     // Handles audio focus
     private AudioManager mAudioManager;
-
     AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
         @Override
         public void onAudioFocusChange(int focusChange) {
@@ -62,6 +57,10 @@ public class FamilyFragment extends Fragment {
             releaseMediaPlayer();
         }
     };
+
+    public FamilyFragment() {
+        // Required empty public constructor
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

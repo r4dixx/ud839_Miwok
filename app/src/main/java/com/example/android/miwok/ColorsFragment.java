@@ -19,16 +19,10 @@ import java.util.ArrayList;
  */
 public class ColorsFragment extends Fragment {
 
-    public ColorsFragment() {
-        // Required empty public constructor
-    }
-
     // Handles playback of all the sound files
     private MediaPlayer mMediaPlayer;
-
     // Handles audio focus
     private AudioManager mAudioManager;
-
     private AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
         @Override
         public void onAudioFocusChange(int focusChange) {
@@ -64,6 +58,10 @@ public class ColorsFragment extends Fragment {
             releaseMediaPlayer();
         }
     };
+
+    public ColorsFragment() {
+        // Required empty public constructor
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
