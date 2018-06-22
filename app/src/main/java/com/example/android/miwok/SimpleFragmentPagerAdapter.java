@@ -15,6 +15,7 @@
  */
 package com.example.android.miwok;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -24,10 +25,21 @@ import android.support.v4.app.FragmentPagerAdapter;
  */
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
-    public SimpleFragmentPagerAdapter(FragmentManager fm) {
+    //We need a Context object to call getResources().getString(int resID).
+    Context mContext;
+
+    public SimpleFragmentPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
+        mContext = context;
     }
 
+    // Here we specify how many tabs we want to get
+    @Override
+    public int getCount() {
+        return 4;
+    }
+
+    // Here we grab the appropriate fragments for each tab
     @Override
     public Fragment getItem(int position) {
         switch (position) {
@@ -44,8 +56,20 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
         }
     }
 
+    // And of course their appropriate titles
     @Override
-    public int getCount() {
-        return 4;
+    public CharSequence getPageTitle(int position) {
+        switch (position) {
+            case 0:
+                return mContext.getResources().getString(R.string.category_numbers);
+            case 1:
+                return mContext.getResources().getString(R.string.category_family);
+            case 2:
+                return mContext.getResources().getString(R.string.category_colors);
+            case 3:
+                return mContext.getResources().getString(R.string.category_phrases);
+            default:
+                return null;
+        }
     }
 }

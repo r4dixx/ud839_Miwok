@@ -19,11 +19,15 @@
     <!-- Primary dark color of the app (shown in the status bar) -->
     <color name="primary_dark_color">#2F1D1A</color>
 
+    <!-- accent color -->
+    <color name="accent_color">#FFFFFF</color>
+
+
     <!-- Background color for app -->
     <color name="tan_background">#FFF7DA</color>
 
     <!-- Text color for words -->
-    <color name="words">@android:color/white</color>
+    <color name="words">#FFFFFF</color>
 
     <!-- Background color for the numbers category -->
     <color name="category_numbers">#FD8E09</color>
