@@ -23,12 +23,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 /**
  * Provides the appropriate {@link Fragment} for a view pager.
  */
-public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
+public class CategoryAdapter extends FragmentPagerAdapter {
 
     //We need a Context object to call getResources().getString(int resID).
     Context mContext;
 
-    public SimpleFragmentPagerAdapter(FragmentManager fm, Context context) {
+    public CategoryAdapter(FragmentManager fm, Context context) {
         super(fm);
         mContext = context;
     }
